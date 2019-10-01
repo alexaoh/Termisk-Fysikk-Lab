@@ -12,13 +12,11 @@ delta_t = 120 #Måler hvert andre minutt (120 sek)
 P_snitt = 99.58 #Gjennomsnittseffekten fra kompressoren
 
 delta_T = []
+delta_T_hc = [] #For å plotte teoretisk øvre grense
 for i in range(1,len(x)):
     delta_T.append(((T_h[i] - T_h[i-1])*m*c)/(P_snitt*delta_t))
-
-#Skal plotte teoretisk øvre grense også:
-delta_T_hc = []
-for i in range(1,len(x)):
     delta_T_hc.append(((T_h[i])+273.15)/(T_h[i]-T_c[i]))
+
 
 plt.figure()
 
