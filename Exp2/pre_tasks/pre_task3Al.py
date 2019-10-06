@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def c_vm_T(T, R=8.314, theta_avg=270): #Guessed 300 from eyeballing the plot.
+def c_vm_T(T, R=8.314, theta_avg=270): #Guessed 270 from eyeballing the plot.
     return 3*R*(theta_avg/T)**2*(exp(theta_avg/T)/((exp(theta_avg/T)-1))**2)
 
 T = np.arange(10,1300)
