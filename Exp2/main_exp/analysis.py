@@ -45,7 +45,7 @@ def new_function_for_Theta_del_T_2(theta, T_0=295.15-d_T, T_f=77, R=8.314, n=0.2
 root_Theta_del_T = fsolve(new_function_for_Theta_del_T,10)
 root_Theta_del_T_2 = fsolve(new_function_for_Theta_del_T_2,10)
 
-del_theta_del_T_0 = (root_Theta_del_T - root_Theta_del_T_2)/2 #This is 2.1 in my journal
+del_theta_del_T_0 = (root_Theta_del_T - root_Theta_del_T_2)/(2*d_T) #This is 2.1 in my journal
 print("The sensitivity of r$theta_{E}$ in regards to r$T_{0}$ is", del_theta_del_T_0)
 
 #The below is used to calculate delTheta/del(deltam):
@@ -58,7 +58,7 @@ def new_function_for_Theta_del_deltam_2(theta, T_0=295.15, T_f=77, R=8.314, n=0.
 root_Theta_del_deltam = fsolve(new_function_for_Theta_del_deltam,10)
 root_Theta_del_deltam_2 = fsolve(new_function_for_Theta_del_deltam_2,10)
 
-del_theta_del_deltam = (root_Theta_del_deltam - root_Theta_del_deltam_2)/2 #This is 2.2 in my journal
+del_theta_del_deltam = (root_Theta_del_deltam - root_Theta_del_deltam_2)/(2*d_delta_m) #This is 2.2 in my journal
 
 print("The sensitivity of r$theta_{E}$ in regards to r$deltam$ is", del_theta_del_deltam)
 
