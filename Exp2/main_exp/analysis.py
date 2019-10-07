@@ -61,7 +61,7 @@ root_Theta_del_deltam_2 = fsolve(new_function_for_Theta_del_deltam_2,10)
 del_theta_del_deltam = (root_Theta_del_deltam - root_Theta_del_deltam_2)/2 #This is 2.2 in my journal
 
 print("The sensitivity of r$theta_{E}$ in regards to r$deltam$ is", del_theta_del_deltam)
-#The below is used to calculate the Gaussian uncertainty propagation:
 
+#The below is used to calculate the Gaussian uncertainty propagation:
 error_theta = sqrt((del_theta_del_T_0*d_T)**2 + (del_theta_del_deltam*d_delta_m)**2)
 print("The gaussian error is:", error_theta)
