@@ -40,6 +40,8 @@ plt.ylabel("mass/grams")
 plt.legend()
 plt.show()
 
+#f.savefig("deltam.pdf", bbox_inches='tight')
+
 #Need to find delta_m
 #Our OG delta_m = 5.067
 #delta_m_1 = a_0_1 + a_1_1*t_1[-1] - (a_0_2 + a_1_2*t_1[-1] - 6.089)
@@ -51,5 +53,5 @@ print(delta_m_1)
 delta_m_2 = a_0_1 + a_1_1*t_2[0] - (a_0_2 + a_1_2*t_2[0])
 print(delta_m_2)
 
-delta_m = (delta_m_1 + delta_m_2)/2 
+delta_m = (delta_m_1 + delta_m_2)/2
 print(delta_m)

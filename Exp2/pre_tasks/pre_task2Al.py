@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def c_vm_T(T, R=8.314, theta_avg=300): #Guessed 300 from eyeballing the plot.
+def c_vm_T(T, R=8.314, theta_avg=285): #Guessed 300 from eyeballing the plot.
     return 3*R*(theta_avg/T)**2*(exp(theta_avg/T)/((exp(theta_avg/T)-1))**2)
 
 T = np.arange(10,1300)
@@ -13,11 +13,15 @@ c_vm_exp = np.array([0.022,0.054,0.112,0.203,0.332,0.5,0.698,0.912,1.375,1.846,2
 
 T_exp = list(np.arange(15,50,5)) + list(np.arange(50,291,10)) + [298,300]
 
-plt.figure()
+f = plt.figure()
 
 plt.plot(T, [c_vm_T(t) for t in T], Color="red",label="Theoretical")
 plt.plot(T_exp,c_vm_exp*4.184, Marker=".",Color="black",label="Experimental",Linestyle="") #Multiply by 4.184 to get SI-units
-plt.legend(loc=1)
+plt.legend(loc=2)
+plt.title("Giauque and Meads (0K-300K)")
+plt.xlim(0,300)
 plt.xlabel("T / K")
 plt.ylabel("c / J $K^{-1}$ $mol^{-1}$")
 plt.show()
+
+f.savefig("pre_task2.pdf", bbox_inches='tight')

@@ -18,7 +18,7 @@ plt.figure()
 plt.plot(x,[delta_Q_minus_mdeltaL(t) for t in x], label="Test", linestyle="", marker="x")
 plt.title("Test-plot")
 plt.legend()
-#plt.show()
+plt.show()
 
 #The other data's delta_m = 4.678
 
@@ -58,7 +58,7 @@ def new_function_for_Theta_del_deltam(theta):
 
 #I thought the fsolve function perhaps was not a fan of having a lot of variables in the function.
 #I therefore tried to define it differently, but it gave the exact same result.
-#Looks like it was right all along, despite the value of the Gaussian being higher than expected. 
+#Looks like it was right all along, despite the value of the Gaussian being higher than expected.
 def new_function_for_Theta_del_deltam_2(theta):
     T_0=295.15
     T_f=77
