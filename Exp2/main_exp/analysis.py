@@ -11,7 +11,7 @@ def delta_Q_minus_mdeltaL(theta, T_0=295.15, T_f=77, R=8.314, n=0.223375, L=2*10
     return 3*n*R*((T_0*epsilon(theta/T_0)-(T_f*epsilon(theta/T_f))))-L*delta_m
 
 root = float(fsolve(delta_Q_minus_mdeltaL, 10))
-print(root)
+print("The root of the function:",root)
 
 x = list(np.arange(0,501))
 plt.figure()
